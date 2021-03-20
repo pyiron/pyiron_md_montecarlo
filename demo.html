@@ -1,0 +1,531 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introduction &#8212; pyiron_md_montecarlo</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.37f24b989f4638ff9c27c22dc7559d4f.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="pyiron_md_montecarlo" href="README.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/logo_dark.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">pyiron_md_montecarlo</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="README.html">
+   pyiron_md_montecarlo
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#setup">
+   Setup
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#run-simulations">
+   Run simulations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#plotting-functions">
+   Plotting functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#visualization">
+   Visualization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#cleanup">
+   Cleanup
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://pyiron.org">pyiron</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/demo.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/pyiron/pyiron_md_montecarlo/master?urlpath=lab/tree/demo.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Introduction
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setup">
+   Setup
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#run-simulations">
+   Run simulations
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plotting-functions">
+   Plotting functions
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#visualization">
+   Visualization
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cleanup">
+   Cleanup
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<p>This notebook shows how to use variance constrained semi grand canonical (VC-SGC) Molecular Dynamics/Monte Carlo (MD/MC) calculations [1]. This approach has been implemented in Lammps [2] and we have made bindings to it inside pyiron for easy use.</p>
+<p>Here, we show a simple example similar to that used in one of our publications [3], which investigates segregation of Mg to a <span class="math notranslate nohighlight">\(\Sigma 5\)</span> tilt grain boundary in Al.</p>
+<p>[1] B. Sadigh, P. Erhart, A. Stukowski, A. Caro, E. Martinez, and L. Zepeda-Ruiz, Phys. Rev. B 85, 184203 (2012).</p>
+<p>[2] <a class="reference external" href="https://vcsgc-lammps.materialsmodeling.org">https://vcsgc-lammps.materialsmodeling.org</a>.</p>
+<p>[3] Huan Zhao, Liam Huber, et al., Phys. Rev. Lett. 124, 106102 (2020).</p>
+</div>
+<div class="section" id="setup">
+<h1>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h1>
+<p>Imports and so forth.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyiron_atomistics</span> <span class="kn">import</span> <span class="n">Project</span>
+<span class="kn">from</span> <span class="nn">pyiron_atomistics.vasp.structure</span> <span class="kn">import</span> <span class="n">read_atoms</span>
+<span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">join</span> <span class="k">as</span> <span class="n">pjoin</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="kn">import</span> <span class="n">DBSCAN</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pr</span> <span class="o">=</span> <span class="n">Project</span><span class="p">(</span><span class="s1">&#39;mdmc_demo&#39;</span><span class="p">)</span>
+<span class="n">pr</span><span class="o">.</span><span class="n">remove_jobs_silently</span><span class="p">(</span><span class="n">recursive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="run-simulations">
+<h1>Run simulations<a class="headerlink" href="#run-simulations" title="Permalink to this headline">¶</a></h1>
+<p>Here we actually run the calculations. First, by relaxing the relevant GB at 0K, then by running VC-SGC MD/MC calculations at high and low temperatures.</p>
+<p>The parallelization scheme for VC-SGC means there are lower limits on the structure size we can calculate for. Thus, even using a relatively short run of 20 ps of MD with 500 Monte Carlo phases this calculation takes about ten minutes. Once it’s executing, go grab a coffee.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">host</span> <span class="o">=</span> <span class="s1">&#39;Al&#39;</span>
+<span class="n">solute</span> <span class="o">=</span> <span class="s1">&#39;Mg&#39;</span>
+<span class="n">potential</span> <span class="o">=</span> <span class="s1">&#39;2009--Mendelev-M-I--Al-Mg--LAMMPS--ipr1&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lattice_guess</span> <span class="o">=</span> <span class="n">pr</span><span class="o">.</span><span class="n">create_ase_bulk</span><span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="n">cubic</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">cell</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">ideal_gb_struct</span> <span class="o">=</span> <span class="n">read_atoms</span><span class="p">(</span><span class="s1">&#39;S5_s001_n210_r1011&#39;</span><span class="p">,</span> <span class="n">species_list</span><span class="o">=</span><span class="p">[</span><span class="n">host</span><span class="p">,</span> <span class="n">host</span><span class="p">])</span>
+<span class="n">ideal_gb_struct</span><span class="o">.</span><span class="n">cell</span> <span class="o">*=</span> <span class="n">lattice_guess</span>
+<span class="n">ideal_gb_struct</span><span class="o">.</span><span class="n">positions</span> <span class="o">*=</span> <span class="n">lattice_guess</span>
+
+<span class="n">relax_gb_job</span> <span class="o">=</span> <span class="n">pr</span><span class="o">.</span><span class="n">create_job</span><span class="p">(</span><span class="n">pr</span><span class="o">.</span><span class="n">job_type</span><span class="o">.</span><span class="n">Lammps</span><span class="p">,</span> <span class="s1">&#39;relax_gb&#39;</span><span class="p">)</span>
+<span class="n">relax_gb_job</span><span class="o">.</span><span class="n">potential</span> <span class="o">=</span> <span class="n">potential</span>
+<span class="n">relax_gb_job</span><span class="o">.</span><span class="n">structure</span> <span class="o">=</span> <span class="n">ideal_gb_struct</span>
+<span class="n">relax_gb_job</span><span class="o">.</span><span class="n">calc_minimize</span><span class="p">(</span><span class="n">f_tol</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span> <span class="n">pressure</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">relax_gb_job</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+<span class="n">gb_struct</span> <span class="o">=</span> <span class="n">relax_gb_job</span><span class="o">.</span><span class="n">get_structure</span><span class="p">()</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The job relax_gb was saved and received the ID: 1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gb_struct</span><span class="o">.</span><span class="n">plot3d</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "8d6b750d8a494a80bb8fe23529ea8e23", "version_major": 2, "version_minor": 0}
+</script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mdmc_job</span> <span class="o">=</span> <span class="n">pr</span><span class="o">.</span><span class="n">create_job</span><span class="p">(</span><span class="n">pr</span><span class="o">.</span><span class="n">job_type</span><span class="o">.</span><span class="n">Lammps</span><span class="p">,</span> <span class="s1">&#39;mdmc&#39;</span><span class="p">)</span>
+<span class="n">mdmc_job</span><span class="o">.</span><span class="n">potential</span> <span class="o">=</span> <span class="n">potential</span>
+<span class="n">mdmc_job</span><span class="o">.</span><span class="n">structure</span> <span class="o">=</span> <span class="n">gb_struct</span><span class="o">.</span><span class="n">repeat</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">])</span>
+<span class="n">mdmc_job</span><span class="o">.</span><span class="n">calc_vcsgc</span><span class="p">(</span>
+    <span class="n">mu</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Al&#39;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;Mg&#39;</span><span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">},</span> 
+    <span class="n">target_concentration</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Al&#39;</span><span class="p">:</span><span class="mf">0.9</span><span class="p">,</span> <span class="s1">&#39;Mg&#39;</span><span class="p">:</span><span class="mf">0.1</span><span class="p">},</span>
+    <span class="n">temperature</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span>
+    <span class="n">pressure</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span>
+    <span class="n">n_ionic_steps</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span>
+    <span class="n">mc_step_interval</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
+    <span class="n">time_step</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span>
+    <span class="n">langevin</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mdmc_job</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The job mdmc was saved and received the ID: 2
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="plotting-functions">
+<h1>Plotting functions<a class="headerlink" href="#plotting-functions" title="Permalink to this headline">¶</a></h1>
+<p>Just leave this collapsed unless you’re really keen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_average_occupation</span><span class="p">(</span><span class="n">struct</span><span class="p">,</span> <span class="n">eps</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">min_samples</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> 
+                            <span class="n">columnar_axis</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">max_in_col</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span> 
+                            <span class="n">size</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">35</span><span class="p">,</span>
+                            <span class="n">save_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;eps&#39;</span><span class="p">,</span> <span class="n">index1_name</span><span class="o">=</span><span class="s1">&#39;Mg&#39;</span><span class="p">,</span> <span class="n">show_orphans</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    For a system with a nice columnar projection, given a VC-SGC job and its minimized final structure, </span>
+<span class="sd">    plots the mean occupation of each column (indicated by colour). Atoms which could not be grouped are </span>
+<span class="sd">    plotted as black.</span>
+<span class="sd">    </span>
+<span class="sd">    `eps` should be tuned to have the minimum number of uncatagorized atoms without assigning more than</span>
+<span class="sd">    the expected number of atoms to a given column.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">from</span> <span class="nn">matplotlib.colors</span> <span class="kn">import</span> <span class="n">ListedColormap</span>
+    <span class="c1"># Project onto the plane</span>
+    <span class="n">axes</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+    <span class="n">axes</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">columnar_axis</span><span class="p">)</span>
+    <span class="n">projected_pos</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">positions</span><span class="p">[:,</span> <span class="n">axes</span><span class="p">]</span>
+    
+    <span class="c1"># Cluster by column</span>
+    <span class="n">cluster_algo</span> <span class="o">=</span> <span class="n">DBSCAN</span><span class="p">(</span><span class="n">eps</span><span class="o">=</span><span class="n">eps</span><span class="p">,</span> <span class="n">min_samples</span><span class="o">=</span><span class="n">min_samples</span><span class="p">)</span>
+    <span class="n">cluster_algo</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">projected_pos</span><span class="p">)</span>
+    <span class="n">column_groups</span> <span class="o">=</span> <span class="n">cluster_algo</span><span class="o">.</span><span class="n">labels_</span>
+    <span class="n">unique_groups</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">column_groups</span><span class="p">)</span>
+    <span class="n">unique_groups</span> <span class="o">=</span> <span class="n">unique_groups</span><span class="p">[</span><span class="n">unique_groups</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># Ignore the &#39;noisy&#39; group</span>
+    
+    <span class="c1"># Double check that two columns aren&#39;t getting lumped together</span>
+    <span class="n">group_sizes</span> <span class="o">=</span> <span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">column_groups</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argwhere</span><span class="p">(</span><span class="n">column_groups</span> <span class="o">==</span> <span class="n">g</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)])</span> <span class="k">for</span> <span class="n">g</span> <span class="ow">in</span> <span class="n">unique_groups</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">group_size</span> <span class="ow">in</span> <span class="n">group_sizes</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">group_size</span> <span class="o">&gt;</span> <span class="n">max_in_col</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;WARNING: Group found with </span><span class="si">{}</span><span class="s2"> members.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">group_size</span><span class="p">))</span>
+
+    <span class="c1"># Get the average positions</span>
+    <span class="n">ungrouped_pos</span> <span class="o">=</span> <span class="n">projected_pos</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argwhere</span><span class="p">(</span><span class="n">column_groups</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)]</span>
+    <span class="n">column_pos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">projected_pos</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argwhere</span><span class="p">(</span><span class="n">column_groups</span> <span class="o">==</span> <span class="n">group</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+                           <span class="k">for</span> <span class="n">group</span> <span class="ow">in</span> <span class="n">unique_groups</span><span class="p">])</span>
+    
+    <span class="c1"># Get the average occupation</span>
+    <span class="n">indices</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">indices</span>
+    <span class="n">column_concentration</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">indices</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argwhere</span><span class="p">(</span><span class="n">column_groups</span> <span class="o">==</span> <span class="n">group</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)])</span>
+                                     <span class="k">for</span> <span class="n">group</span> <span class="ow">in</span> <span class="n">unique_groups</span><span class="p">])</span>
+    
+    <span class="c1"># Plot</span>
+    <span class="n">units</span> <span class="o">=</span> <span class="mi">255</span>
+    <span class="n">Al_color</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">153</span><span class="o">/</span><span class="n">units</span><span class="p">,</span> <span class="mi">153</span><span class="o">/</span><span class="n">units</span><span class="p">,</span> <span class="mi">153</span><span class="o">/</span><span class="n">units</span><span class="p">])</span>
+    <span class="n">Mg_color</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([(</span><span class="mi">0</span><span class="o">/</span><span class="n">units</span><span class="p">,</span> <span class="mi">128</span><span class="o">/</span><span class="n">units</span><span class="p">,</span> <span class="mi">255</span><span class="o">/</span><span class="n">units</span><span class="p">)])</span>
+    <span class="n">mix_frac</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+    <span class="n">cmap</span> <span class="o">=</span> <span class="n">ListedColormap</span><span class="p">([</span><span class="nb">tuple</span><span class="p">(((</span><span class="mi">1</span> <span class="o">-</span> <span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="n">Al_color</span> <span class="o">+</span> <span class="n">x</span> <span class="o">*</span> <span class="n">Mg_color</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">mix_frac</span><span class="p">])</span> 
+    
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">show_orphans</span><span class="p">:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">ungrouped_pos</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">ungrouped_pos</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">s</span><span class="o">=</span><span class="n">size</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+    <span class="n">cols</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">column_pos</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">column_pos</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">column_concentration</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="n">size</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">)</span>
+    <span class="n">cbar</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">cols</span><span class="p">,</span> <span class="n">orientation</span><span class="o">=</span><span class="s1">&#39;horizontal&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s1">&#39;major&#39;</span><span class="p">,</span> <span class="n">labelsize</span><span class="o">=</span><span class="n">fontsize</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Distance $[\mathrm{\AA}]$&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">fontsize</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Distance $[\mathrm{\AA}]$&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">fontsize</span><span class="p">)</span>
+    <span class="n">cbar</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Columnar </span><span class="si">{}</span><span class="s1"> concentration&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">index1_name</span><span class="p">),</span> <span class="n">size</span><span class="o">=</span><span class="n">fontsize</span><span class="p">)</span>
+    <span class="n">cbar</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s1">&#39;major&#39;</span><span class="p">,</span> <span class="n">labelsize</span><span class="o">=</span><span class="n">fontsize</span><span class="p">)</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">save_name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">save_name</span> <span class="o">+</span> <span class="s1">&#39;.&#39;</span> <span class="o">+</span> <span class="n">fmt</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="n">fmt</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="visualization">
+<h1>Visualization<a class="headerlink" href="#visualization" title="Permalink to this headline">¶</a></h1>
+<p>Finally, let’s take a peek at the results.</p>
+<p>Early on, we see that although the Mg atoms are more prevalent near the boundary, they are still spread out somewhat uniformly through the system.</p>
+<p>By the end of the simulation, even with this truncated simulation time to account for the fact this is only a demo, the Mg atoms nearly perfectly occupy the planar GB sites, and you can begin to see the columnar checkerboard occupation appearing. Depending on your random seed, you may also see some structural changes at the GB.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_average_occupation</span><span class="p">(</span><span class="n">mdmc_job</span><span class="o">.</span><span class="n">get_structure</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/demo_13_0.png" src="_images/demo_13_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_average_occupation</span><span class="p">(</span><span class="n">mdmc_job</span><span class="o">.</span><span class="n">get_structure</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/demo_14_0.png" src="_images/demo_14_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="cleanup">
+<h1>Cleanup<a class="headerlink" href="#cleanup" title="Permalink to this headline">¶</a></h1>
+<p>This will be commented out to begin with, in case you want to probe the output a little more deeply. But feel free to uncomment and execute whenever you’re done with the demo.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># pr.remove_jobs_silently(recursive=True)</span>
+<span class="c1"># pr.remove(enable=True)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="README.html" title="previous page">pyiron_md_montecarlo</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By pyiron<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>
